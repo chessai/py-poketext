@@ -26,14 +26,14 @@ Use git to clone the updated Poketext project from this repository and navigate 
 $ git clone https://github.com/wutang-bnp/poketext.git
 $ cd poketext
 
-Once you have checked out the start branch after cloning into your appropriately descriptive directory, we need to create a Python virtual environment and install all the relevant software for this project to run. 
+We need to create a Python virtual environment and install all the relevant software for this project to run:
 $ virtualenv venv
 New python executable in venv/bin/python
 Installing setuptools, pip...done.
 
-For Twilio to work with Django, we need to add our TWILIO_ACCOUNT_SID (username or email used to sign into Twilio) and TWILIO_AUTH_TOKEN (password) to our environment. Open venv/bin/activate with a text editor, go to the bottom and add these two lines:
-export TWILIO_ACCOUNT_SID=YOUR_USERNAME_HERE
-export TWILIO_AUTH_TOKEN=YOUR_PASSWORD_HERE
+For Twilio to work with Django, we need to add our TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN to our environment. Open venv/bin/activate with a text editor, go to the bottom and add these two lines:
+export TWILIO_ACCOUNT_SID=YOUR_TWILIO_ACCOUNT_SID_HERE
+export TWILIO_AUTH_TOKEN=YOUR_TWILIO_AUTH_TOKEN_HERE
 
 Be sure to replace the values with your own tokens. Save the file and activate the virutal environment:
 $ source venv/bin/activate
@@ -62,13 +62,15 @@ Type CONTROL+C to stop the server.
 
 With the Heroku Toolbelt installed, log into Heroku
 (venv) $ heroku login
-You will be prompted for your heroku credentials - then we can create a heroku app:
-(venv) $ heroku create
-Creating appNameHere... done, stack is cedar
-https://appNameHere.herokuapp.com/ | git@heroku.com:appNameHere.git
+if: you get an error like "bash: heroku: command not found" it may mean you need to manually add the symlink after installing Heroku Toolbelt with:
+(venv) $ sudo ln -s /usr/local/heroku/bin/heroku /usr/bin/heroku
+else: If all goes well, you will be prompted for your heroku credentials - then we can create a heroku app:
+(venv) $ heroku create appNameHere
+Creating appName... done, stack is cedar
+https://appName.herokuapp.com/ | git@heroku.com:appName.git
 Git remote heroku added
 
-'appNameHere' will probably be of the format 'descriptor-natureThingy-number' - don't worry. You can change this. Refer to:
+'appName' will be of the format 'descriptor-natureThingy-number' if you don't specify an app name (by just typing 'heroku create') - don't worry. You can change this. Refer to:
 https://devcenter.heroku.com/articles/renaming-apps
 
 To deploy the code to the new Heroku app use the following command:
@@ -82,23 +84,23 @@ Initializing repository, done.
       [Downloading/unpacking here]
 
 ...
-Compressing... done, 40somethingish MB
+Compressing... done, X MB
 -----> Launching... done, v1
-    https://nature-inspired-name-here-andThenANumber.herokuapp.com/ deployed to Heroku
-To git@heroku.com:nature-inspired-name-here-andThenANumber.git
+    https://appName.herokuapp.com/ deployed to Heroku
+To git@heroku.com:appName.git
 * [new branch]      master -> master
 
 Now we need to add our Twilio tokens to Heroku using the following commands:
 (venv) $ heroku config:set TWILIO_ACCOUNT_SID='YOUR_TWILIO_SID_HERE'
-Setting config vars and restarting nature-inspired-name-here-andThenANumber... done, v1
+Setting config vars and restarting appName... done, v1
 TWILIO_ACCOUNT_SID: YOUR_TWILIO_SID_HERE
-(venv) $ heroku config set TWILIO_AUTH_TOKEN='YOUR_TWILIO_PASSWORD_HERE'
-Setting config vars and restarting nature-inspired-name-here-andThenANumber... done, v1
-TWILIO_AUTH_TOKEN: YOUR_TWILIO_PASSWORD_HERE
+(venv) $ heroku config:set TWILIO_AUTH_TOKEN='YOUR_TWILIO_AUTH_TOKEN_HERE'
+Setting config vars and restarting appName... done, v1
+TWILIO_AUTH_TOKEN: YOUR_TWILIO_AUTH_TOKEN_HERE
 
 If you don't have an MMS-enabled phone number, get a new phone number here: https://www.twilio.com/user/account/phone-numbers/search
 
-Within the MMS enabled phone number settings, we want to change the Messaging URL to point to our heroku URL (https://appNameHere.herokuapp.com/incoming/message) and then click save.
+Within the MMS enabled phone number settings, we want to change the Messaging URL to point to our heroku URL (https://appName.herokuapp.com/incoming/message) and then click save.
 
 Now text the name of a Pokemon to your Twilio phone number. 
 
