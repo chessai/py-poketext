@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-import views
+from poketext import views
 
 urlpatterns = patterns('',
     # Examples:
