@@ -1,6 +1,6 @@
 {
     "name": "Poketext",
-    "description": "Your own SMS and MMS pokedex, powered by Twilio and PokeAPI",
+    "description": "Your own SMS and MMS pokedex, powered by Twilio and PokeAPI v1",
     "keywords": [
         "Pokemon",
         "twilio",
@@ -8,7 +8,7 @@
         "sms",
         "API"
     ],
-    "repository": "https://github.com/phalt/poketext",
+    "repository": "https://github.com/wutang-bnp/poketext",
     "env": {
     "TWILIO_ACCOUNT_SID": {
         "description": "Your Twilio account id",
