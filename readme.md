@@ -1,6 +1,6 @@
 # Poketext
 
-An SMS/MMS Pokedex application, powered by Twilio PokeAPI v1
+An SMS/MMS Pokedex application, powered by Twilio and PokeAPI v1
 
 What you NEED to get this working:
 
@@ -35,7 +35,7 @@ New python executable in venv/bin/python
 Installing setuptools, pip...done.
 ```
 
-For Twilio to work with Django, we need to add our TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN to our environment. Open venv/bin/activate with a text editor, go to the bottom and add these two lines:
+For Twilio to work with Django, we need to add our TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN to our environment. They can be found [here](https://www.twilio.com/user/account). Open venv/bin/activate with a text editor, go to the bottom and add these two lines:
 ```
 export TWILIO_ACCOUNT_SID=YOUR_TWILIO_ACCOUNT_SID_HERE
 export TWILIO_AUTH_TOKEN=YOUR_TWILIO_AUTH_TOKEN_HERE
