@@ -2,12 +2,14 @@
 
 An SMS/MMS Pokedex application, powered by Twilio and PokeAPI v1
 
+## Setup
+
 What you NEED to get this working:
 
 - Python 3.5 (Python is the language used in this application)
 - Ruby (Necessary for Heroku Toolbelt)
-- Pip, the Python library installer, if you don't already have it (did not come with my Python installation)
-- Python's virtual environment library, virtualenv (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+- Pip, the standard Python library installer
+- virtualenv, a Python virtual environment library, [located here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 - A free Twilio Account ([Create Twilio Account](https://twilio.com/try-twilio))
 - A free Heroku Account ([Create Heroku Account](https://id.heroku.com/signup))
 - The Heroku Toolbelt ([Heroku Toolbelt](https://devcenter.heroku.com/articles/getting-started-with-python#set-up))
