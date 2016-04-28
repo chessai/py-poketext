@@ -1,8 +1,6 @@
 # Poketext
 
-An SMS/MMS Pokedex application, powered by Twilio and GitHub user phalt's PokeAPI v1
-
-Here I will be re-writing the tutorial from https://www.twilio.com/blog/2014/11/build-your-own-pokedex-with-django-mms-and-pokeapi.html, without the explanations of the workings of everything and while updating the tutorial to python-3.5.1
+An SMS/MMS Pokedex application, powered by Twilio PokeAPI v1
 
 What you NEED to get this working:
 
