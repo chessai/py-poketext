@@ -7,9 +7,9 @@ An SMS/MMS Pokedex application, powered by Twilio and PokeAPI v1
 What you NEED to get this working:
 
 - Python 3.5 (Python is the language used in this application)
-- Ruby (Necessary for Heroku Toolbelt)
 - Pip, the standard Python library installer
 - virtualenv, a Python virtual environment library, [located here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+- Ruby (Necessary for Heroku Toolbelt)
 - A free Twilio Account ([Create Twilio Account](https://twilio.com/try-twilio))
 - A free Heroku Account ([Create Heroku Account](https://id.heroku.com/signup))
 - The Heroku Toolbelt ([Heroku Toolbelt](https://devcenter.heroku.com/articles/getting-started-with-python#set-up))
@@ -126,7 +126,7 @@ TWILIO_AUTH_TOKEN: YOUR_TWILIO_AUTH_TOKEN_HERE
 ```
 
 If you don't have an MMS-enabled phone number, get a new phone number here:
-https://www.twilio.com/user/account/phone-numbers/search
+([Get a Twilio phone number](https://www.twilio.com/user/account/phone-numbers/search))
 
 Within the MMS enabled phone number settings, we want to change the Messaging URL to point to our heroku URL (https://appName.herokuapp.com/incoming/message) and then click save.
 
